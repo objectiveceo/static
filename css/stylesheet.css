@@ -69,6 +69,23 @@ header {
 	margin: 1em;
 }
 
+dl.post-list dt {
+	font-size: 1.3rem;
+}
+
+dl.post-list dd {
+	margin: 0;
+}
+
+dl.post-list dd p {
+	margin: 0;
+	padding: 0.2rem 0;
+}
+
+dl.post-list dt+dd {
+	margin-bottom: 2rem;
+}
+
 @media screen and (min-width: 600px) {
 	#masthead {
 		display: grid;
@@ -94,6 +111,11 @@ header {
 		grid-template-columns: 1fr 3fr;
 		grid-template-areas: "full full" "sidebar content";
 		margin: 0; /* Reset from "small" display */
+	}
+
+	#content .full {
+		grid-area: full;
+		margin: 0 10vw;
 	}
 	
 	#sidebar {
