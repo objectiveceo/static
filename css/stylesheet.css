@@ -1,0 +1,114 @@
+html {
+	font-family: Garamond, Georgia, serif;
+	font-size: 1.2em;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	font-family: Didot, Garamond, serif;
+}
+
+body {
+	padding: 0;
+	margin: 0;
+}
+
+a {
+	text-decoration: underline;
+	color: darkgreen;
+}
+
+a:hover {
+	text-decoration: none;
+}
+
+header {
+	/* Thanks to https://cssgradient.io/gradient-backgrounds/ */
+	background: #FDC830;  /* fallback for old browsers */
+	background: -webkit-linear-gradient(to right, #F37335, #FDC830);  /* Chrome 10-25, Safari 5.1-6 */
+	background: linear-gradient(135deg, #F37335 25%, #FDC830 75%); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+#header_separator {
+	background: linear-gradient(215deg, rgba(2,0,36,0) 50%, rgba(255,255,255,1) 50%);
+	height: 20px;
+}
+
+#masthead h1 {
+	color: #963403;
+	padding: 1rem 0;
+	margin: 0;
+	text-align: center;
+}
+
+#masthead nav ul {
+	padding: 0;
+	margin: 0;
+	list-style: none;
+	padding: 0.6em;
+}
+
+#masthead nav ul a {
+	padding: 0.5em;
+	text-decoration: none;
+	color: black;
+	text-shadow: 0 1px 0 white;
+}
+
+#masthead nav ul a:hover {
+	background: rgba(255, 255, 255, 0.4);
+	box-shadow: inset 0 0 3px rgba(0, 0, 0, 0.4);
+	border-radius: 4px;
+}
+
+#masthead nav ul li {
+	display: inline;
+}
+
+#content {
+	text-align: justify;
+	margin: 1em;
+}
+
+@media screen and (min-width: 600px) {
+	#masthead {
+		display: grid;
+		grid-template-columns: 1fr 2fr 1fr;
+		grid-template-areas: "spacing title nav";
+	}
+
+	#masthead h1 {
+		grid-area: title;
+		font-size: calc(6vw);
+		color: #963403;
+		text-align: left; /* Reset from "small" display */
+	}
+
+	#masthead nav {
+		grid-area: nav;
+		display: flex;
+		align-items: center;
+	}
+
+	#content {
+		display: grid;
+		grid-template-columns: 1fr 3fr;
+		grid-template-areas: "full full" "sidebar content";
+		margin: 0; /* Reset from "small" display */
+	}
+	
+	#sidebar {
+		margin-top: 5em; /* Blocking height of article title */
+		padding-right: 1em;
+		text-align: right;
+	}
+	
+	article {
+		text-align: justify;
+		margin-right: 2em;
+	}
+	
+	article .title {
+		font-size: calc(1.5rem + 3vw);
+		margin: 0.5rem 0;
+	}
+} 
