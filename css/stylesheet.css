@@ -1,3 +1,4 @@
+ /* https://huemint.com/website-2/#palette=2d3233-ffb383-79c0cd-ff6a00 */
 html {
 	font-family: Garamond, Georgia, serif;
 	font-size: 1.2em;
@@ -10,11 +11,13 @@ h1, h2, h3, h4, h5, h6 {
 body {
 	padding: 0;
 	margin: 0;
+	background: #383e40;
+	color: #ccc;
 }
 
 a {
 	text-decoration: underline;
-	color: darkgreen;
+	color: #79c0cd;
 }
 
 a:hover {
@@ -22,45 +25,34 @@ a:hover {
 }
 
 header {
-	/* Thanks to https://cssgradient.io/gradient-backgrounds/ */
-	background: #FDC830;  /* fallback for old browsers */
-	background: -webkit-linear-gradient(to right, #F37335, #FDC830);  /* Chrome 10-25, Safari 5.1-6 */
-	background: linear-gradient(135deg, #F37335 25%, #FDC830 75%); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+	background: hsl(190, 6%, 19%);
+	height: 200px;
+	position: relative;
 }
 
-#header_separator {
-	background: linear-gradient(215deg, rgba(2,0,36,0) 50%, rgba(255,255,255,1) 50%);
-	height: 20px;
+header h1 {
+	bottom: 8px;
+	color: #ff6a00;
+	font-size: 3rem;
+	margin: 0 0 0 4rem;
+	padding: 1rem 1rem;
+	position: absolute;
 }
 
-#masthead h1 {
-	color: #963403;
-	padding: 1rem 0;
-	margin: 0;
-	text-align: center;
-}
-
-#masthead nav ul {
-	padding: 0;
+header nav ul {
 	margin: 0;
 	list-style: none;
-	padding: 0.6em;
+	padding: 1em 0;
+	background: hsl(195, 6%, 13%);
 }
 
-#masthead nav ul a {
-	padding: 0.5em;
+header nav ul a {
+	padding: 1rem;
 	text-decoration: none;
-	color: black;
-	text-shadow: 0 1px 0 white;
+	color: #ffb383;
 }
 
-#masthead nav ul a:hover {
-	background: rgba(255, 255, 255, 0.4);
-	box-shadow: inset 0 0 3px rgba(0, 0, 0, 0.4);
-	border-radius: 4px;
-}
-
-#masthead nav ul li {
+header nav ul li {
 	display: inline;
 }
 
@@ -69,47 +61,29 @@ header {
 	margin: 1em;
 }
 
-dl.post-list dt {
-	font-size: 1.3rem;
+.post-list article {
+	background: hsl(190, 6%, 19%);
+	box-shadow: 0 2px 8px #000;
+	float: left;
+	margin-left: 10%;
+	margin: 1em;
+	padding: 1rem;
+	width: 80%;
 }
 
-dl.post-list dd {
-	margin: 0;
+.post-list content {
+	color: #ccc;
 }
 
-dl.post-list dd p {
-	margin: 0;
-	padding: 0.2rem 0;
-}
-
-dl.post-list dt+dd {
-	margin-bottom: 2rem;
+.post-list h1 {
+	text-align: left;
 }
 
 .pollex-image {
 	box-shadow: 0 5px 10px;
 }
 
-@media screen and (min-width: 600px) {
-	#masthead {
-		display: grid;
-		grid-template-columns: 1fr 2fr 1fr;
-		grid-template-areas: "spacing title nav";
-	}
-
-	#masthead h1 {
-		grid-area: title;
-		font-size: calc(6vw);
-		color: #963403;
-		text-align: left; /* Reset from "small" display */
-	}
-
-	#masthead nav {
-		grid-area: nav;
-		display: flex;
-		align-items: center;
-	}
-
+@media screen and (min-width: 975px) {
 	#content {
 		display: grid;
 		grid-template-columns: 1fr 3fr;
@@ -137,4 +111,8 @@ dl.post-list dt+dd {
 		font-size: calc(1.5rem + 3vw);
 		margin: 0.5rem 0;
 	}
+
+	.post-list article {
+		width: 40%;
+	}	
 }
