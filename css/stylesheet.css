@@ -56,6 +56,10 @@ header nav ul li {
 	display: inline;
 }
 
+pre {
+	max-width: 800px;
+}
+
 #content {
 	text-align: justify;
 	margin: 1em;
@@ -85,6 +89,10 @@ header nav ul li {
 }
 
 @media screen and (min-width: 975px) {
+	pre {
+		max-width: 975px;
+	}
+
 	#content {
 		display: grid;
 		grid-template-columns: 1fr 3fr;
